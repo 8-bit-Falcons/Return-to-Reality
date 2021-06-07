@@ -21,6 +21,10 @@
 ## File structure
 - core/ #this contains all the stuff
   - assets/
+    - backgrounds/
+      - bg_level1.png
+      - bg_level2.png
+      - ...
     - cutscenes/
       - ending/
         - 1.png
