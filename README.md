@@ -2,8 +2,9 @@
 
 ## Conventions to follow
 - Name your branch after what you're working on. Use lowercase letters and separate words with hyphens. Examples: level1, level2, music-integration
-- Make **draft** pull requests for every branch you make (compare your branch to main)
+- Make **draft** pull requests for every branch you make (compare your branch to **develop**)
   - Undraft them when you are finished
+  - We're merging into **develop** because we want to keep code that is submitable in main; for example, if we had added a cutscene but it messed up the transition into the boss fight, we wouldn't want that code in main in case we don't fix that before we have to submit
 - Make sure you put files under the appropriate folders (see **File structure** below)
 
 ## Other things to keep in mind
@@ -21,6 +22,10 @@
 ## File structure
 - core/ #this contains all the stuff
   - assets/
+    - backgrounds/
+      - bg_level1.png
+      - bg_level2.png
+      - ...
     - cutscenes/
       - ending/
         - 1.png
@@ -106,5 +111,3 @@
     - main/
     - pause/
     - settings/
-- releases/ #this contains the stuff people download
-  - #some kinda exe idk
