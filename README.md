@@ -111,5 +111,3 @@
     - main/
     - pause/
     - settings/
-- releases/ #this contains the stuff people download
-  - #some kinda exe idk
