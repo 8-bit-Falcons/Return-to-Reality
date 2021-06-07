@@ -2,7 +2,7 @@
 
 ## Conventions to follow
 - Name your branch after what you're working on. Use lowercase letters and separate words with hyphens. Examples: level1, level2, music-integration
-- Make **draft** pull requests for every branch you make (compare your branch to main)
+- Make **draft** pull requests for every branch you make (compare your branch to **develop**)
   - Undraft them when you are finished
 - Make sure you put files under the appropriate folders (see **File structure** below)
 
