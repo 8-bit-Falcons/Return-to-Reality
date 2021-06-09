@@ -24,8 +24,7 @@ window/size/height=704
 2d_physics/layer_1="player"
 2d_physics/layer_2="platform"
 2d_physics/layer_3="boundaries"
-2d_physics/layer_4="dissappearing_platform"
-2d_physics/layer_5="enemy"
+2d_physics/layer_4="enemy"
 
 [physics]
 
