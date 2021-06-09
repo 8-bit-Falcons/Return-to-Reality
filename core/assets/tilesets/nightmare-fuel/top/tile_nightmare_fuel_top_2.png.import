@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level_2_Background.PNG-098a7cf10a441a8f7d229f27f04057dc.stex"
+path="res://.import/tile_nightmare_fuel_top_2.png-9be6e749fd9ad0b2cc0df15dc63d9f0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Level_2_Background.PNG"
-dest_files=[ "res://.import/Level_2_Background.PNG-098a7cf10a441a8f7d229f27f04057dc.stex" ]
+source_file="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_2.png"
+dest_files=[ "res://.import/tile_nightmare_fuel_top_2.png-9be6e749fd9ad0b2cc0df15dc63d9f0c.stex" ]
 
 [params]
 
