@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_nightmare_fuel_top.png-7689c1b22b026965a8e240ae8aa401a8.stex"
+path="res://.import/sprite_boss_full_health_3.png-f7d5e01cd81e7a231408bfc056f5c6b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/nightmare-fuel/tile_nightmare_fuel_top.png"
-dest_files=[ "res://.import/tile_nightmare_fuel_top.png-7689c1b22b026965a8e240ae8aa401a8.stex" ]
+source_file="res://assets/sprites/boss/full-health/sprite_boss_full_health_3.png"
+dest_files=[ "res://.import/sprite_boss_full_health_3.png-f7d5e01cd81e7a231408bfc056f5c6b1.stex" ]
 
 [params]
 
