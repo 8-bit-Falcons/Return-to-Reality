@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grape Soda (Level 2).wav-eb0cbcf5a1b5bddc6740a2333e1671a4.sample"
+
+[deps]
+
+source_file="res://assets/music/Grape Soda (Level 2).wav"
+dest_files=[ "res://.import/Grape Soda (Level 2).wav-eb0cbcf5a1b5bddc6740a2333e1671a4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

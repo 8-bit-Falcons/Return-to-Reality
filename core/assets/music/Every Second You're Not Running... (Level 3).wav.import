@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Every Second You're Not Running... (Level 3).wav-37e7bd52e5ff3fede0e30357f62ff4fa.sample"
+
+[deps]
+
+source_file="res://assets/music/Every Second You're Not Running... (Level 3).wav"
+dest_files=[ "res://.import/Every Second You're Not Running... (Level 3).wav-37e7bd52e5ff3fede0e30357f62ff4fa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
