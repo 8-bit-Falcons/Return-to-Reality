@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=2]
 
-[ext_resource path="res://assets/tilesets/tileset_levels_1-3.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/tileset_levels_4-5.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
