@@ -1,16 +1,54 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://scenes/misc/BouncyClouds/RightClouds.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://scenes/misc/BouncyClouds/LeftClouds.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L6.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R2.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R10.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R6.png" type="Texture" id=4]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R5.png" type="Texture" id=5]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R7.png" type="Texture" id=6]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R8.png" type="Texture" id=7]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L5.png" type="Texture" id=8]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L4.png" type="Texture" id=9]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L2.png" type="Texture" id=10]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L8.png" type="Texture" id=11]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L1.png" type="Texture" id=12]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R4.png" type="Texture" id=13]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R1.png" type="Texture" id=14]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R9.png" type="Texture" id=15]
+[ext_resource path="res://assets/tilesets/cloud/right/Cloud Jump R3.png" type="Texture" id=16]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L10.png" type="Texture" id=17]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L7.png" type="Texture" id=18]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L9.png" type="Texture" id=19]
+[ext_resource path="res://assets/tilesets/cloud/left/Cloud Jump L3.png" type="Texture" id=20]
 [ext_resource path="res://scenes/misc/BouncyClouds/BouncyClouds.gd" type="Script" id=21]
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "TouchesPlayer",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 14 ), ExtResource( 2 ), ExtResource( 16 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "TouchesPlayer",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 8 )
 
 [node name="Cloud" type="Node2D"]
@@ -18,55 +56,27 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="LeftCloud" type="Area2D" parent="."]
-visible = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="LeftCloud"]
-position = Vector2( 48, -16 )
-frames = ExtResource( 2 )
-animation = "TouchesPlayer"
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCloud"]
-position = Vector2( 32, 0 )
-shape = SubResource( 1 )
-
-[node name="RightCloud" type="Area2D" parent="."]
-visible = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="RightCloud"]
-position = Vector2( 48, -16 )
-frames = ExtResource( 1 )
-animation = "TouchesPlayer"
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCloud"]
-position = Vector2( 64, 0 )
-shape = SubResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
 script = ExtResource( 21 )
 
 [node name="LeftCloud" type="AnimatedSprite" parent="Area2D"]
-frames = ExtResource( 2 )
+frames = SubResource( 2 )
 animation = "Idle"
+frame = 1
+playing = true
 
 [node name="RightCloud" type="AnimatedSprite" parent="Area2D"]
-frames = ExtResource( 1 )
+frames = SubResource( 3 )
 animation = "Idle"
+frame = 1
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+position = Vector2( 0, 3 )
+shape = SubResource( 1 )
+one_way_collision = true
 
-[connection signal="body_entered" from="LeftCloud" to="RightCloud" method="_on_LeftCloud_body_entered"]
-[connection signal="animation_finished" from="LeftCloud/AnimatedSprite" to="RightCloud" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="body_entered" from="RightCloud" to="LeftCloud" method="_on_RightCloud_body_entered"]
-[connection signal="animation_finished" from="RightCloud/AnimatedSprite" to="LeftCloud" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="Area2D/LeftCloud" to="Area2D" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Area2D/RightCloud" to="Area2D" method="_on_animation_finished"]
