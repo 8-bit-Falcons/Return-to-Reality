@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/misc/BouncyClouds/RightClouds.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scenes/misc/BouncyClouds/LeftClouds.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://scenes/misc/BouncyClouds/BouncyClouds.gd" type="Script" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 8 )
+
+[node name="Cloud" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftCloud" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LeftCloud"]
+position = Vector2( 48, -16 )
+frames = ExtResource( 2 )
+animation = "TouchesPlayer"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCloud"]
+position = Vector2( 32, 0 )
+shape = SubResource( 1 )
+
+[node name="RightCloud" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RightCloud"]
+position = Vector2( 48, -16 )
+frames = ExtResource( 1 )
+animation = "TouchesPlayer"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCloud"]
+position = Vector2( 64, 0 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 21 )
+
+[node name="LeftCloud" type="AnimatedSprite" parent="Area2D"]
+frames = ExtResource( 2 )
+animation = "Idle"
+
+[node name="RightCloud" type="AnimatedSprite" parent="Area2D"]
+frames = ExtResource( 1 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="LeftCloud" to="RightCloud" method="_on_LeftCloud_body_entered"]
+[connection signal="animation_finished" from="LeftCloud/AnimatedSprite" to="RightCloud" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="RightCloud" to="LeftCloud" method="_on_RightCloud_body_entered"]
+[connection signal="animation_finished" from="RightCloud/AnimatedSprite" to="LeftCloud" method="_on_AnimatedSprite_animation_finished"]
