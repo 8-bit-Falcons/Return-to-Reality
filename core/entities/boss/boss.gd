@@ -2,15 +2,15 @@ extends KinematicBody2D
 
 signal dying
 
-const TIME_BETWEEN_HITS = 0.5  # seconds
+const TIME_BETWEEN_HITS = 2  # seconds
 # Last number is how many flashes; this ensures that flashes are consistent & divisible
-const FLASH_FREQ = TIME_BETWEEN_HITS / 5
+const FLASH_FREQ = 0.1
 # normal color; damage color
 const COLOR_DAMAGE = ["ffffff", "ff9c9c"]
 const SPRITE_DAMAGE = ["fullhealth", "2hp", "1hp", "dying"]
 const MINIMUM_HEALTH = 0 # death health
 const FADE_RATE = 0.025  # value between 0 and 1 for how much to fade per frame
-const SPEED = 150
+const SPEED = 250
 const MAX_HEALTH = 2
 
 var health = MAX_HEALTH
