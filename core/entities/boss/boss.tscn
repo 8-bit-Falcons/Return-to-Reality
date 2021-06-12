@@ -88,7 +88,6 @@ script = ExtResource( 31 )
 scale = Vector2( 0.06, 0.06 )
 frames = SubResource( 1 )
 animation = "fullhealth"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
