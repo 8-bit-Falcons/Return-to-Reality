@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/The Nightmare (Ghost Cutscene).wav-d7bce631fdef2fff0cf2d7e031b623ac.sample"
+
+[deps]
+
+source_file="res://assets/music/The Nightmare (Ghost Cutscene).wav"
+dest_files=[ "res://.import/The Nightmare (Ghost Cutscene).wav-d7bce631fdef2fff0cf2d7e031b623ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
