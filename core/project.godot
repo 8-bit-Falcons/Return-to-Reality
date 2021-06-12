@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Return to Reality"
-run/main_scene="res://scenes/levels/Level1.tscn"
+run/main_scene="res://ui/main/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
