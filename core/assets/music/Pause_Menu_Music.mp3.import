@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pause_Menu_Music.mp3-c370773c39fac34660c5080919425170.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Pause_Menu_Music.mp3"
+dest_files=[ "res://.import/Pause_Menu_Music.mp3-c370773c39fac34660c5080919425170.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
