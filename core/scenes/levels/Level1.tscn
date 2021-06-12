@@ -10,7 +10,7 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 960 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Platforms" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -30,3 +30,6 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
+
+[node name="NightmareFuel" type="TileMap" parent="."]
+format = 1
