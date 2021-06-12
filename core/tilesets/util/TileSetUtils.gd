@@ -1,7 +1,7 @@
 extends Node
 
 
-static func replace_placeholders(placeholder_cells: Array, scene: PackedScene, tile_map_instance: TileMap):
+static func replace_placeholders(placeholder_cells: Array, scene, tile_map_instance: TileMap):
 # Replaces all cells in `placeholder_cells` with scenes `scene`.
 # placeholder cells: probably `get_cells_by_id(SOMEINT)`
 # scene: a preloaded tscn file
