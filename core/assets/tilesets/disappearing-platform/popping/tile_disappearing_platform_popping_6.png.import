@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_jumping_4.png-d645c3b215ae598ada74c5675ed1f3e3.stex"
+path="res://.import/tile_disappearing_platform_popping_6.png-14ac49b9ce5645e91b59eca382d82c78.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/jumping/player_jumping_4.png"
-dest_files=[ "res://.import/player_jumping_4.png-d645c3b215ae598ada74c5675ed1f3e3.stex" ]
+source_file="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_6.png"
+dest_files=[ "res://.import/tile_disappearing_platform_popping_6.png-14ac49b9ce5645e91b59eca382d82c78.stex" ]
 
 [params]
 

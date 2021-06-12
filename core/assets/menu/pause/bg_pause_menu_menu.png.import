@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_disappearing_platform.png-7089b05f4c97dff785d0638c2f8b31a9.stex"
+path="res://.import/bg_pause_menu_menu.png-c787eccbae3100ae3ecd4d654eb35dce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/tile_disappearing_platform.png"
-dest_files=[ "res://.import/tile_disappearing_platform.png-7089b05f4c97dff785d0638c2f8b31a9.stex" ]
+source_file="res://assets/menu/pause/bg_pause_menu_menu.png"
+dest_files=[ "res://.import/bg_pause_menu_menu.png-c787eccbae3100ae3ecd4d654eb35dce.stex" ]
 
 [params]
 
