@@ -45,6 +45,6 @@ shape = SubResource( 1 )
 
 [node name="World_Complete" parent="." instance=ExtResource( 7 )]
 position = Vector2( 32, 256 )
-next_world = "res://scenes/levels/Level4.tscn"
+next_world = "res://scenes/levels/Level3.tscn"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
