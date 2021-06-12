@@ -1,0 +1,46 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_8.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_9.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_5.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_7.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_10.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/monsters/tree/sprite_tree_4.png" type="Texture" id=10]
+[ext_resource path="res://entities/monsters/TreeMonster.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 32 )
+
+[node name="TreeMonster" type="Area2D"]
+collision_layer = 8
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.71051e-20, 0 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 16, 32 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_TreeMonster_body_entered"]

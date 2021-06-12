@@ -14,6 +14,10 @@ config/name="Return to Reality"
 run/main_scene="res://ui/main/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Music="*res://scenes/misc/Music/Music_Player.tscn"
+
 [display]
 
 window/size/width=1280
