@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/1-3/TilesetLevels1-3.tres" type="TileSet" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://assets/menu/pause/bg_pause_menu_resume.png" type="Texture" id=6]
 [ext_resource path="res://assets/menu/pause/bg_pause_menu_settings.png" type="Texture" id=7]
 [ext_resource path="res://assets/menu/pause/bg_pause_menu_menu.png" type="Texture" id=8]
+[ext_resource path="res://ui/settings/Settings.gd" type="Script" id=9]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_1.png" type="Texture" id=13]
 
 [node name="Level1" type="Node2D"]
 
@@ -38,10 +43,10 @@ autoplay = true
 [node name="NightmareFuel" type="TileMap" parent="."]
 format = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Pause" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="Pause" type="Control" parent="CanvasLayer"]
+[node name="Pause" type="Control" parent="Pause"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -53,7 +58,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause"]
+[node name="ColorRect" type="ColorRect" parent="Pause/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.513726 )
@@ -61,22 +66,68 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ResumeSelected" type="Sprite" parent="CanvasLayer/Pause"]
+[node name="ResumeSelected" type="Sprite" parent="Pause/Pause"]
 position = Vector2( -736, 1056 )
 scale = Vector2( 0.486842, 0.486842 )
 texture = ExtResource( 6 )
 offset = Vector2( 2826.38, -1446.05 )
 
-[node name="SettingsSelected" type="Sprite" parent="CanvasLayer/Pause"]
+[node name="SettingsSelected" type="Sprite" parent="Pause/Pause"]
 visible = false
 position = Vector2( -736, 1056 )
 scale = Vector2( 0.486842, 0.486842 )
 texture = ExtResource( 7 )
 offset = Vector2( 2826.38, -1446.05 )
 
-[node name="MenuSelected" type="Sprite" parent="CanvasLayer/Pause"]
+[node name="MenuSelected" type="Sprite" parent="Pause/Pause"]
 visible = false
 position = Vector2( -736, 1056 )
 scale = Vector2( 0.486842, 0.486842 )
 texture = ExtResource( 8 )
 offset = Vector2( 2826.38, -1446.05 )
+
+[node name="Settings" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="Settings" type="Control" parent="Settings"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 704.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Settings/Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.513726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume0" type="Sprite" parent="Settings/Settings"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.108187, 0.108187 )
+texture = ExtResource( 10 )
+
+[node name="Volume1" type="Sprite" parent="Settings/Settings"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 13 )
+
+[node name="Volume2" type="Sprite" parent="Settings/Settings"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 11 )
+
+[node name="Volume3" type="Sprite" parent="Settings/Settings"]
+position = Vector2( 640, 352 )
+scale = Vector2( 0.107913, 0.107913 )
+texture = ExtResource( 12 )
