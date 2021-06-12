@@ -7,10 +7,13 @@ const TIME_BETWEEN_HITS = 0.5  # seconds
 const FLASH_FREQ = TIME_BETWEEN_HITS / 5
 # normal color; damage color
 const COLOR_DAMAGE = ["ffffff", "ff9c9c"]
+const SPRITE_DAMAGE = ["fullhealth", "2hp", "1hp", "dying"]
 const MINIMUM_HEALTH = 0 # death health
-const FADE_RATE = 0.1  # value between 0 and 1 for how much to fade per frame
+const FADE_RATE = 0.025  # value between 0 and 1 for how much to fade per frame
+const SPEED = 150
+const MAX_HEALTH = 2
 
-var health = 2
+var health = MAX_HEALTH
 var dead = false  # this isn't really needed but I added it for simplicity's sake
 var time_since_hit = 0.0
 var time_since_flash = 0.0
@@ -24,6 +27,13 @@ func _ready():
 func _physics_process(delta):
 	if dead:
 		$AnimatedSprite.modulate.a -= FADE_RATE
+		if $AnimatedSprite.modulate.a < 0.0:
+			queue_free()
+	else:
+		var heading = (get_parent().get_node("Player").position - position).normalized()
+		# TODO potentially scuffed?  idk how else to do
+		var motion = heading * SPEED * delta
+		position.x += motion.x
 
 func _process(delta):
 	if time_since_hit > 0.0:
@@ -50,6 +60,7 @@ func die():
 func _on_Area2D_body_entered(body):
 	if time_since_hit == 0.0:
 		health -= 1
+		$AnimatedSprite.play(SPRITE_DAMAGE[MAX_HEALTH - health])
 		if health >= MINIMUM_HEALTH:
 			time_since_hit = 0.001
 		else:
