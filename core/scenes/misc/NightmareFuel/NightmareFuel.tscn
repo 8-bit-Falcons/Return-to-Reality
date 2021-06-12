@@ -27,7 +27,7 @@ animations = [ {
 extents = Vector2( 16, 8 )
 
 [node name="Nightmare_Fuel" type="Area2D"]
-collision_layer = 8
+collision_layer = 4
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -37,6 +37,7 @@ __meta__ = {
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "Top"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

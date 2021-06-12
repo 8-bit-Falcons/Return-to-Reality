@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-const TYPE = "player"
 const UP = Vector2(0, -1)
 const GRAVITY = 20
 const ACCELERATION = 50
