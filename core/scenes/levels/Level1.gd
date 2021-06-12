@@ -1,11 +1,10 @@
 extends Node2D
 
-var reload = false
-
 func _ready():
-	if not Music.playing:
+	if not Music.stream == load("res://assets/music/Orange Soda (Level 1).wav"):
 		Music.stream = load("res://assets/music/Orange Soda (Level 1).wav")
 		Music.play()
 
-func _exit_tree():
-	if not reload: Music.stop()
+
+func _on_Fallzone_body_entered(body):
+	get_tree().reload_current_scene()

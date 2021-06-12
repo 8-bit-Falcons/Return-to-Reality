@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	if not Music.playing:
+	if not Music.stream == load("res://assets/music/Grape Soda (Level 2).wav"):
 		Music.stream = load("res://assets/music/Grape Soda (Level 2).wav")
 		Music.play()
 
