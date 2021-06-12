@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/monsters/ant/sprite_ant_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/monsters/ant/sprite_ant_2.png" type="Texture" id=2]
+[ext_resource path="res://entities/monsters/AntMonster.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="AntMonster" type="Area2D"]
+collision_layer = 8
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 32, 32 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_AntMonster_body_entered"]
