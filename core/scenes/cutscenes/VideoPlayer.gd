@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_VideoPlayer_finished():
-	get_tree().change_scene("res://scenes/cutscenes/End.tscn")
+	get_tree().change_scene("res://scenes/cutscenes/Credits.tscn")

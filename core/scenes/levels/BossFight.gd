@@ -7,4 +7,5 @@ func _ready():
 
 func _on_Bossman_dying():
 	print("he dead")
-	get_tree().change_scene("res://scenes/cutscenes/WakingUpCutscene.tscn".tscn")
+	Music.stop()
+	get_tree().change_scene("res://scenes/cutscenes/WakingUpCutscene.tscn")
