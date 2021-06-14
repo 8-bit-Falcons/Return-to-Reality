@@ -12,7 +12,7 @@ var player_in_hitbox = false
 func _process(delta):
 	if player_in_hitbox and is_visible and time_since_entering == 0.0:
 		time_since_entering = 0.001
-	# using elif so that the delta doesn't get added right after beginning to count
+			# using elif so that the delta doesn't get added right after beginning to count
 	elif time_since_entering > 0.0:
 		time_since_entering += delta
 		if time_since_entering >= GRACE_PERIOD:
@@ -28,7 +28,11 @@ func _process(delta):
 func set_visibility(visible: bool):
 	is_visible = visible
 	$StaticBody2D/CollisionShape2D.disabled = not is_visible
-	$Sprite.visible = is_visible
+	if visible:
+		$Sprite.visible = visible
+		$Sprite.play("Appearing")
+	else:
+		$Sprite.play("Popping")
 
 func _on_DissapearingPlatform_body_entered(_body):
 	player_in_hitbox = true
@@ -36,3 +40,10 @@ func _on_DissapearingPlatform_body_entered(_body):
 
 func _on_DissapearingPlatform_body_exited(_body):
 	player_in_hitbox = false
+
+
+func _on_Sprite_animation_finished():
+	if is_visible:
+		$Sprite.play("Idle")
+	else:
+		$Sprite.visible = false
