@@ -11,13 +11,26 @@ config_version=4
 [application]
 
 config/name="Return to Reality"
-run/main_scene="res://scenes/levels/Level1.tscn"
+run/main_scene="res://ui/main/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Music="*res://scenes/misc/Music/Music_Player.tscn"
 
 [display]
 
 window/size/width=1280
 window/size/height=704
+
+[input]
+
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 

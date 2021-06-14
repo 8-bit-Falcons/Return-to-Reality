@@ -1,13 +1,43 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/misc/DisappearingPlatform/DisappearingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://assets/tilesets/disappearing-platform/tile_disappearing_platform_idle.png" type="Texture" id=2]
-
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_7.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_6.png" type="Texture" id=4]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_9.png" type="Texture" id=5]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_8.png" type="Texture" id=7]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_12.png" type="Texture" id=8]
+[ext_resource path="res://assets/tilesets/disappearing-platform/reappearing/disappearing_platform_appearing_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/tilesets/disappearing-platform/reappearing/disappearing_platform_appearing_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/tilesets/disappearing-platform/reappearing/disappearing_platform_appearing_3.png" type="Texture" id=11]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_4.png" type="Texture" id=12]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/tilesets/disappearing-platform/popping/tile_disappearing_platform_popping_2.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2343, 16.1561 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "Popping",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Appearing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 16 )
 
 [node name="DissapearingPlatform" type="Area2D"]
@@ -18,16 +48,21 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
+position = Vector2( 16, 16 )
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_DissapearingPlatform_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_DissapearingPlatform_body_exited"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
