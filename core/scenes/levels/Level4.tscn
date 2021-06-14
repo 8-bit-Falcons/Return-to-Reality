@@ -21,6 +21,7 @@ texture = ExtResource( 1 )
 [node name="World_Complete" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2048, 1024 )
 rotation = 6.28319
+next_world = "res://scenes/levels/BossFight.tscn"
 
 [node name="Platforms" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
