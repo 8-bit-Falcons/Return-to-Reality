@@ -8,6 +8,9 @@ var play_selected = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not Music.stream == load("res://assets/music/Menu Music.mp3"):
+		Music.stream = load("res://assets/music/Menu Music.mp3")
+		Music.play()
 	$CenterContainer/SettingsSelected.hide()
 	$CenterContainer/PlaySelected.show()
 
@@ -24,3 +27,5 @@ func _process(delta):
 		$CenterContainer/SettingsSelected.hide()
 	if Input.is_action_pressed("ui_accept") and play_selected:
 		get_tree().change_scene(next_world)
+	if Input.is_action_pressed("ui_accept") and not play_selected:
+		$AcceptDialog.show()
