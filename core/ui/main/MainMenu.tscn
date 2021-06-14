@@ -15,6 +15,14 @@ __meta__ = {
 }
 next_world = "res://scenes/levels/Level1.tscn"
 
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_left = 469.0
+margin_top = 323.0
+margin_right = 810.0
+margin_bottom = 381.0
+resizable = true
+dialog_text = "We do not currently have a working settings menu."
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0

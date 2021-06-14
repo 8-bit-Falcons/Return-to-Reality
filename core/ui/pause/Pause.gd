@@ -43,10 +43,11 @@ func _process(delta):
 			get_tree().paused = new_pause_state
 			visible = new_pause_state
 		if Input.is_action_just_pressed("ui_accept") and selected == 1:
-			pass
+			$AcceptDialog.show()
 		if Input.is_action_just_pressed("ui_accept") and selected == 2:
 			var new_pause_state = not get_tree().paused
 			get_tree().paused = new_pause_state
 			visible = new_pause_state
+			Music.stop()
 			get_tree().change_scene("res://ui/main/MainMenu.tscn")
 		
