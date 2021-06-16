@@ -103,7 +103,6 @@ texture = ExtResource( 8 )
 offset = Vector2( 2826.38, -1446.05 )
 
 [node name="AcceptDialog" type="AcceptDialog" parent="Pause/Pause"]
-visible = true
 margin_left = 469.0
 margin_top = 323.0
 margin_right = 810.0
