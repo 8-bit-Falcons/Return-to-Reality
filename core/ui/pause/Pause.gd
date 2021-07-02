@@ -11,7 +11,7 @@ func _input(event):
 # This code is disgusting but I'm sorry I cannot rn
 func _process(delta):
 	if get_tree().paused:
-		if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_down"):
+		if Input.is_action_just_pressed("ui_down"):
 			if selected == 0:
 				selected = 1
 				$ResumeSelected.hide()
@@ -24,7 +24,7 @@ func _process(delta):
 				selected = 0
 				$MenuSelected.hide()
 				$ResumeSelected.show()
-		if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("ui_up"):
 			if selected == 0:
 				selected = 2
 				$ResumeSelected.hide()
