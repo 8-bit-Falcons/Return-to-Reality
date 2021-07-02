@@ -37,7 +37,7 @@ func _process(delta):
 				selected = 1
 				$MenuSelected.hide()
 				$SettingsSelected.show()
-				
+
 		if Input.is_action_just_pressed("ui_accept") and selected == 0:
 			var new_pause_state = not get_tree().paused
 			get_tree().paused = new_pause_state
@@ -50,4 +50,4 @@ func _process(delta):
 			visible = new_pause_state
 			Music.stop()
 			get_tree().change_scene("res://ui/main/MainMenu.tscn")
-		
+
