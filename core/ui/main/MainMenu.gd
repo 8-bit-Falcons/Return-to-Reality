@@ -26,6 +26,8 @@ func _process(delta):
 		$CenterContainer/PlaySelected.show()
 		$CenterContainer/SettingsSelected.hide()
 	if Input.is_action_pressed("ui_accept") and play_selected:
+		$ColorRect/AnimationPlayer.play("Fade")
+		yield(get_tree().create_timer(0.5), "timeout")
 		get_tree().change_scene(next_world)
 	if Input.is_action_pressed("ui_accept") and not play_selected:
 		$AcceptDialog.show()
