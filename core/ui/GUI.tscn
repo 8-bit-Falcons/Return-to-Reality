@@ -79,6 +79,7 @@ scale = Vector2( 0.243421, 0.243421 )
 texture = ExtResource( 6 )
 
 [node name="Volume3" type="Sprite" parent="SettingsMenu"]
+visible = false
 position = Vector2( 640, 352 )
 scale = Vector2( 0.107913, 0.107913 )
 texture = ExtResource( 2 )
