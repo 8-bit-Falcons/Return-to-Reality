@@ -51,7 +51,7 @@ tile_data = PoolIntArray( 589843, 0, 0, 655365, 0, 0, 851996, 0, 0, 983049, 0, 0
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 56, 792 )
+position = Vector2( 64, 800 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -71,6 +71,7 @@ margin_right = 2560.0
 margin_bottom = 1408.0
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

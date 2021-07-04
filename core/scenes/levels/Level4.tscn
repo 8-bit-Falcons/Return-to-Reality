@@ -86,6 +86,7 @@ margin_right = 2560.0
 margin_bottom = 1408.0
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
