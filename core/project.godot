@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Music="*res://scenes/misc/Music/Music_Player.tscn"
+PauseMusic="*res://scenes/misc/Music/PauseMusicPlayer.tscn"
 
 [display]
 

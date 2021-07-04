@@ -17,6 +17,9 @@ func _input(event):
 		current_menu = PAUSE_MENU
 		if not new_pause_state:
 			current_menu = NONE
+			PauseMusic.stop()
+		else:
+			PauseMusic.play()
 
 # This code is disgusting but I'm sorry I cannot rn
 func _process(delta):
@@ -68,7 +71,8 @@ func _process(delta):
 			current_menu = NONE
 			Music.stop()
 			get_tree().change_scene("res://ui/main/MainMenu.tscn")
-			
+	
+	# On the settings menu, pressing the arrow keys changes the volume
 	elif current_menu == SETTINGS_MENU:
 		if Input.is_action_just_pressed("ui_left"):
 			if settings_selected == VOLUME1:
