@@ -58,6 +58,8 @@ func _process(delta):
 			var new_pause_state = not get_tree().paused
 			get_tree().paused = new_pause_state
 			$PauseMenu.set_visible(new_pause_state)
+			current_menu = NONE
+			PauseMusic.stop()
 		# Pressing ui_accept when the settings button is selected opens a popup
 		if Input.is_action_just_pressed("ui_accept") and pause_selected == SETTINGS:
 			$SettingsMenu.set_visible(true)
