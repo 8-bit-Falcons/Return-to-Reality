@@ -83,3 +83,8 @@ visible = false
 position = Vector2( 640, 352 )
 scale = Vector2( 0.107913, 0.107913 )
 texture = ExtResource( 2 )
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_right = 83.0
+margin_bottom = 58.0
+dialog_text = "You have enabled devtools. Press F11 to disable."

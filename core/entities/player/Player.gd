@@ -62,3 +62,5 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("devtools"): # F11
 		devtools_enabled = not devtools_enabled
+		if devtools_enabled:
+			get_node("../GUI/AcceptDialog").popup_centered()
