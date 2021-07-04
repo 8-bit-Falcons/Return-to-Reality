@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tilesets/1-3/TilesetLevels1-3.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/backgrounds/bg_level2.PNG" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" type="Script" id=5]
 [ext_resource path="res://scenes/levels/Level2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/misc/WorldComplete/World_Complete.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1528, 56 )
@@ -46,5 +47,7 @@ shape = SubResource( 1 )
 [node name="World_Complete" parent="." instance=ExtResource( 7 )]
 position = Vector2( 32, 256 )
 next_world = "res://scenes/levels/Level3.tscn"
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

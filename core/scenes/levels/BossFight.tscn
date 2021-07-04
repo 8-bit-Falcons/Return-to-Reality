@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://entities/boss/boss.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://tilesets/NightmareFuel/NightmareFuel.tres" type="TileSet" id=7]
 [ext_resource path="res://assets/backgrounds/bg_level5.PNG" type="Texture" id=8]
 [ext_resource path="res://scenes/levels/BossFight.gd" type="Script" id=9]
+[ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8080, 160 )
@@ -59,6 +60,8 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1056, 1056 )
+
+[node name="GUI" parent="." instance=ExtResource( 10 )]
 
 [connection signal="dying" from="Bossman" to="." method="_on_Bossman_dying"]
 [connection signal="body_entered" from="NIGHTMARENIGHTMARENIGHTMARE/Area2D" to="NIGHTMARENIGHTMARENIGHTMARE/Area2D" method="_on_Nightmare_Fuel_body_entered"]
