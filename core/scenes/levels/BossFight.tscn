@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://entities/boss/boss.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" type="Script" id=2]
@@ -13,6 +13,22 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8080, 160 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 9 )
@@ -62,6 +78,17 @@ shape = SubResource( 1 )
 position = Vector2( 1056, 1056 )
 
 [node name="GUI" parent="." instance=ExtResource( 10 )]
+
+[node name="Fade" type="ColorRect" parent="."]
+margin_right = 2560.0
+margin_bottom = 1408.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
+anims/Fade = SubResource( 2 )
 
 [connection signal="dying" from="Bossman" to="." method="_on_Bossman_dying"]
 [connection signal="body_entered" from="NIGHTMARENIGHTMARENIGHTMARE/Area2D" to="NIGHTMARENIGHTMARENIGHTMARE/Area2D" method="_on_Nightmare_Fuel_body_entered"]
