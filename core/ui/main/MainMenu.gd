@@ -6,7 +6,7 @@ enum {MAIN_MENU, SETTINGS_MENU} # Defines menus
 enum {VOLUME0 = -80, VOLUME1 = -40, VOLUME2 = -20, VOLUME3 = 0} # Defines settings menu buttons
 var current_menu = MAIN_MENU # The menu currently open
 var play_selected = true # Is the play button currently selected?
-var settings_file = "res://settings.save"
+var settings_file = "user://settings.save"
 var settings_selected = load_settings() # The button selected on the settings menu
 
 # Called when the node enters the scene tree for the first time.

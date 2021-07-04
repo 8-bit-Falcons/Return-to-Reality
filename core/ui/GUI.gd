@@ -5,7 +5,7 @@ enum {RESUME, SETTINGS, MAIN_MENU} # Defines pause menu buttons
 enum {VOLUME0 = -80, VOLUME1 = -40, VOLUME2 = -20, VOLUME3 = 0} # Defines settings menu buttons
 var current_menu = NONE # The menu currently open
 var pause_selected = RESUME # The button selected on the pause menu
-var settings_file = "res://settings.save"
+var settings_file = "user://settings.save"
 var settings_selected = load_settings() # The button selected on the settings menu
 
 
