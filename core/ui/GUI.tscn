@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/menu/pause/bg_pause_menu_menu.png" type="Texture" id=1]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu/pause/bg_pause_menu_settings.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu/pause/bg_pause_menu_resume.png" type="Texture" id=4]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_0.png" type="Texture" id=7]
+[ext_resource path="res://ui/GUI.gd" type="Script" id=8]
+
+[node name="GUI" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 8 )
+
+[node name="PauseMenu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 704.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.513726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeSelected" type="Sprite" parent="PauseMenu"]
+position = Vector2( -736, 1056 )
+scale = Vector2( 0.486842, 0.486842 )
+texture = ExtResource( 4 )
+offset = Vector2( 2826.38, -1446.05 )
+
+[node name="SettingsSelected" type="Sprite" parent="PauseMenu"]
+visible = false
+position = Vector2( -736, 1056 )
+scale = Vector2( 0.486842, 0.486842 )
+texture = ExtResource( 3 )
+offset = Vector2( 2826.38, -1446.05 )
+
+[node name="MenuSelected" type="Sprite" parent="PauseMenu"]
+visible = false
+position = Vector2( -736, 1056 )
+scale = Vector2( 0.486842, 0.486842 )
+texture = ExtResource( 1 )
+offset = Vector2( 2826.38, -1446.05 )
+
+[node name="AcceptDialog" type="AcceptDialog" parent="PauseMenu"]
+margin_left = 469.0
+margin_top = 323.0
+margin_right = 810.0
+margin_bottom = 381.0
+dialog_text = "We do not currently have a working settings menu."
+
+[node name="SettingsMenu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 704.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="SettingsMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.513726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume0" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.108187, 0.108187 )
+texture = ExtResource( 7 )
+
+[node name="Volume1" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 5 )
+
+[node name="Volume2" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 6 )
+
+[node name="Volume3" type="Sprite" parent="SettingsMenu"]
+position = Vector2( 640, 352 )
+scale = Vector2( 0.107913, 0.107913 )
+texture = ExtResource( 2 )
