@@ -1,10 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/menu/main/bg_main_menu.png" type="Texture" id=1]
 [ext_resource path="res://assets/menu/main/button_main_menu_settings.png" type="Texture" id=2]
 [ext_resource path="res://assets/menu/main/button_main_menu_play.png" type="Texture" id=3]
 [ext_resource path="res://ui/main/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://assets/music/Menu Music.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/menu/settings/menu_settings_volume_0.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -14,14 +34,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 next_world = "res://scenes/levels/Level1.tscn"
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-margin_left = 469.0
-margin_top = 323.0
-margin_right = 810.0
-margin_bottom = 381.0
-resizable = true
-dialog_text = "We do not currently have a working settings menu."
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -48,3 +60,58 @@ texture = ExtResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[node name="SettingsMenu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 704.0
+rect_pivot_offset = Vector2( -1824, 224 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="SettingsMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.513726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume0" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.108187, 0.108187 )
+texture = ExtResource( 9 )
+
+[node name="Volume1" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 7 )
+
+[node name="Volume2" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.243421, 0.243421 )
+texture = ExtResource( 8 )
+
+[node name="Volume3" type="Sprite" parent="SettingsMenu"]
+visible = false
+position = Vector2( 640, 352 )
+scale = Vector2( 0.107913, 0.107913 )
+texture = ExtResource( 6 )
+
+[node name="Fade" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 704.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
+anims/Fade = SubResource( 1 )
