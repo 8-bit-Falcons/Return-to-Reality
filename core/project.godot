@@ -13,6 +13,8 @@ config_version=4
 config/name="Return to Reality"
 run/main_scene="res://ui/main/MainMenu.tscn"
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
