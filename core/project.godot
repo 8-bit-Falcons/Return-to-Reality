@@ -25,6 +25,8 @@ PauseMusic="*res://scenes/misc/Music/PauseMusicPlayer.tscn"
 
 window/size/width=1280
 window/size/height=704
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
