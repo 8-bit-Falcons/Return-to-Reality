@@ -34,7 +34,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 0/z_index = 0
 1/name = "1"
@@ -61,7 +61,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 1/z_index = 0
 2/name = "2"
@@ -88,7 +88,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 2/z_index = 0
 3/name = "3"
@@ -136,7 +136,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 4/z_index = 0
 5/name = "5"
@@ -247,7 +247,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 9/z_index = 0
 10/name = "10"
@@ -274,7 +274,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 10/z_index = 0
 11/name = "11"
@@ -301,7 +301,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 11/z_index = 0
 12/name = "12"
@@ -433,7 +433,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 17/z_index = 0
 18/name = "18"
@@ -502,7 +502,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 20/z_index = 0
 21/name = "21"
@@ -592,7 +592,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 24/z_index = 0
 25/name = "25"
@@ -619,7 +619,7 @@ b = Vector2( 16, -16 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -1.25, -1.09278e-07, 8.74228e-08, -1, 16, -16 )
+"shape_transform": Transform2D( 1.25, 0, 0, 1, 16, 16 )
 } ]
 25/z_index = 0
 26/name = "26"
