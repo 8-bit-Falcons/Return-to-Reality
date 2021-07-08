@@ -26,7 +26,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="0/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -46,7 +46,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="1/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -66,7 +66,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="2/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -100,7 +100,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="4/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -176,7 +176,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="9/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -196,7 +196,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="10/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -216,7 +216,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="11/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -306,7 +306,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="17/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -354,7 +354,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="20/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -416,7 +416,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="24/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -436,7 +436,7 @@ shape = SubResource( 1 )
 
 [node name="InvisibleEdge" type="CollisionShape2D" parent="25/StaticBody2D"]
 position = Vector2( 16, 16 )
-scale = Vector2( 1.25, 1 )
+scale = Vector2( 1.35, 1 )
 shape = SubResource( 2 )
 one_way_collision = true
 
