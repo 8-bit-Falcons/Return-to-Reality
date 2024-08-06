@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b0vqpsllx2vj0" path="res://entities/player/Player.tscn" id="3"]
 [ext_resource type="TileSet" path="res://tilesets/NightmareFuel/NightmareFuel.tres" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/misc/WorldComplete/World_Complete.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://ui/GUI.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://irkxtcoon4dq" path="res://ui/GUI.tscn" id="6"]
 
 [sub_resource type="GDScript" id="1"]
 script/source = "extends Node2D

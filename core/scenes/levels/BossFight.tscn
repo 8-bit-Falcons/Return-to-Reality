@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" path="res://tilesets/NightmareFuel/NightmareFuel.tres" id="7"]
 [ext_resource type="Texture2D" uid="uid://bn3ufws2oxqup" path="res://assets/backgrounds/bg_level5.PNG" id="8"]
 [ext_resource type="Script" path="res://scenes/levels/BossFight.gd" id="9"]
-[ext_resource type="PackedScene" path="res://ui/GUI.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://irkxtcoon4dq" path="res://ui/GUI.tscn" id="10"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16160, 320)

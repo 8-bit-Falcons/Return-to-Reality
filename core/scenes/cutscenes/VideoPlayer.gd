@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_VideoPlayer_finished():
-	StageManager.change_stage("res://scenes/cutscenes/Credits.tscn")
+	StageManager.change_stage(StageManager.CREDITS)

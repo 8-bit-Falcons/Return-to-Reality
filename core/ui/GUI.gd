@@ -9,6 +9,15 @@ var settings_file = "user://settings.save"
 var settings_selected = load_settings() # The button selected on the settings menu
 
 
+func _ready():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), set_volume(settings_selected))
+	
+	if get_tree().paused:
+		$PauseMenu.set_visible(true)
+		$SettingsMenu.set_visible(false)
+		current_menu = PAUSE_MENU
+		PauseMusic.play()
+
 # When the pause button is pressed, inverse the pause state of the level
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -23,7 +32,7 @@ func _input(event):
 		else:
 			PauseMusic.play()
 
-# This code is disgusting but I'm sorry I cannot rn
+# HACK: This code is disgusting but I'm sorry I cannot rn
 func _process(delta):
 	# On the pause menu, pressing the arrow keys changes the currently selected
 	# button
@@ -84,7 +93,7 @@ func _process(delta):
 			current_menu = NONE
 			Music.stop()
 			PauseMusic.stop()
-			get_tree().change_scene("res://ui/main/MainMenu.tscn")
+			StageManager.change_stage(StageManager.MAIN_MENU)
 	
 	# On the settings menu, pressing the arrow keys changes the volume
 	elif current_menu == SETTINGS_MENU:

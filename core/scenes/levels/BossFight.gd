@@ -8,4 +8,4 @@ func _ready():
 func _on_Bossman_dying():
 	print("he dead")
 	Music.stop()
-	StageManager.change_stage("res://scenes/cutscenes/WakingUpCutscene.tscn")
+	StageManager.change_stage(StageManager.WAKE_UP_CUTSCENE)

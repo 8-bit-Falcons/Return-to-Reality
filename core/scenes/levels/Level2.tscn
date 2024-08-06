@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" id="5"]
 [ext_resource type="Script" path="res://scenes/levels/Level2.gd" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/misc/WorldComplete/World_Complete.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://ui/GUI.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://irkxtcoon4dq" path="res://ui/GUI.tscn" id="8"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(3056, 112)

@@ -1,90 +1,79 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://irkxtcoon4dq"]
 
-[ext_resource path="res://assets/menu/pause/bg_pause_menu_menu.png" type="Texture" id=1]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_3.png" type="Texture" id=2]
-[ext_resource path="res://assets/menu/pause/bg_pause_menu_settings.png" type="Texture" id=3]
-[ext_resource path="res://assets/menu/pause/bg_pause_menu_resume.png" type="Texture" id=4]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_0.png" type="Texture" id=7]
-[ext_resource path="res://ui/GUI.gd" type="Script" id=8]
+[ext_resource type="Texture2D" uid="uid://ckb7351vxmit4" path="res://assets/menu/pause/bg_pause_menu_menu.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcuyca1662hf3" path="res://assets/menu/settings/menu_settings_volume_3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dwqarrqv22hxm" path="res://assets/menu/pause/bg_pause_menu_settings.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://csd1egpfbivt" path="res://assets/menu/pause/bg_pause_menu_resume.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dya0roe8cbnoi" path="res://assets/menu/settings/menu_settings_volume_1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dcr5ge7tcp0uy" path="res://assets/menu/settings/menu_settings_volume_2.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://iug2j64of8nx" path="res://assets/menu/settings/menu_settings_volume_0.png" id="7"]
+[ext_resource type="Script" path="res://ui/GUI.gd" id="8"]
 
 [node name="GUI" type="CanvasLayer"]
-pause_mode = 2
-script = ExtResource( 8 )
+script = ExtResource("8")
 
 [node name="PauseMenu" type="Control" parent="."]
-pause_mode = 2
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1280.0
-margin_bottom = 704.0
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.513726 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 0.513726)
 
-[node name="ResumeSelected" type="Sprite" parent="PauseMenu"]
-position = Vector2( -736, 1056 )
-scale = Vector2( 0.486842, 0.486842 )
-texture = ExtResource( 4 )
-offset = Vector2( 2826.38, -1446.05 )
+[node name="ResumeSelected" type="Sprite2D" parent="PauseMenu"]
+position = Vector2(-736, 1056)
+scale = Vector2(0.486842, 0.486842)
+texture = ExtResource("4")
+offset = Vector2(2826.38, -1446.05)
 
-[node name="SettingsSelected" type="Sprite" parent="PauseMenu"]
+[node name="SettingsSelected" type="Sprite2D" parent="PauseMenu"]
 visible = false
-position = Vector2( -736, 1056 )
-scale = Vector2( 0.486842, 0.486842 )
-texture = ExtResource( 3 )
-offset = Vector2( 2826.38, -1446.05 )
+position = Vector2(-736, 1056)
+scale = Vector2(0.486842, 0.486842)
+texture = ExtResource("3")
+offset = Vector2(2826.38, -1446.05)
 
-[node name="MenuSelected" type="Sprite" parent="PauseMenu"]
+[node name="MenuSelected" type="Sprite2D" parent="PauseMenu"]
 visible = false
-position = Vector2( -736, 1056 )
-scale = Vector2( 0.486842, 0.486842 )
-texture = ExtResource( 1 )
-offset = Vector2( 2826.38, -1446.05 )
+position = Vector2(-736, 1056)
+scale = Vector2(0.486842, 0.486842)
+texture = ExtResource("1")
+offset = Vector2(2826.38, -1446.05)
 
 [node name="SettingsMenu" type="Control" parent="."]
-pause_mode = 2
-visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1280.0
-margin_bottom = 704.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Volume0" type="Sprite" parent="SettingsMenu"]
+[node name="Volume0" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.108187, 0.108187 )
-texture = ExtResource( 7 )
+position = Vector2(640, 352)
+scale = Vector2(0.108187, 0.108187)
+texture = ExtResource("7")
 
-[node name="Volume1" type="Sprite" parent="SettingsMenu"]
+[node name="Volume1" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.243421, 0.243421 )
-texture = ExtResource( 5 )
+position = Vector2(640, 352)
+scale = Vector2(0.243421, 0.243421)
+texture = ExtResource("5")
 
-[node name="Volume2" type="Sprite" parent="SettingsMenu"]
+[node name="Volume2" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.243421, 0.243421 )
-texture = ExtResource( 6 )
+position = Vector2(640, 352)
+scale = Vector2(0.243421, 0.243421)
+texture = ExtResource("6")
 
-[node name="Volume3" type="Sprite" parent="SettingsMenu"]
+[node name="Volume3" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.107913, 0.107913 )
-texture = ExtResource( 2 )
+position = Vector2(640, 352)
+scale = Vector2(0.243421, 0.243421)
+texture = ExtResource("2")
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-margin_right = 83.0
-margin_bottom = 58.0
 dialog_text = "You have enabled devtools. Press F11 to disable."

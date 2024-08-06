@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" path="res://tilesets/NightmareFuel/NightmareFuel.tres" id="7_bcdpf"]
 [ext_resource type="PackedScene" uid="uid://b0vqpsllx2vj0" path="res://entities/player/Player.tscn" id="8_u4dy0"]
 [ext_resource type="Texture2D" uid="uid://cho83d1emqhyb" path="res://assets/sprites/tv/working/sprite_tv_working_1.png" id="9_bnpqf"]
-[ext_resource type="PackedScene" path="res://ui/GUI.tscn" id="10_e8gyf"]
+[ext_resource type="PackedScene" uid="uid://irkxtcoon4dq" path="res://ui/GUI.tscn" id="10_e8gyf"]
 
 [sub_resource type="GDScript" id="2"]
 script/source = "extends Node2D

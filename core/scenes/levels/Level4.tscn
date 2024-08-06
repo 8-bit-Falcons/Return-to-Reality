@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://tilesets/4-5/DisappearingPlatform/DisappearingPlatformTiles.gd" id="7"]
 [ext_resource type="Script" path="res://tilesets/NightmareFuel/NightmareFuelTiles.gd" id="8"]
 [ext_resource type="TileSet" path="res://tilesets/NightmareFuel/NightmareFuel.tres" id="9"]
-[ext_resource type="PackedScene" path="res://ui/GUI.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://irkxtcoon4dq" path="res://ui/GUI.tscn" id="10"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(2624, 64)

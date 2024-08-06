@@ -3,6 +3,10 @@ extends CanvasLayer
 @onready var animations = $AnimationPlayer
 @onready var black = $ColorRect
 
+const MAIN_MENU = "res://ui/main/MainMenu.tscn"
+const WAKE_UP_CUTSCENE = "res://scenes/cutscenes/WakingUpCutscene.tscn"
+const CREDITS = "res://scenes/cutscenes/Credits.tscn"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
