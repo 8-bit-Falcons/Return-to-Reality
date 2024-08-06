@@ -1,117 +1,81 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://5w2od0tixurs"]
 
-[ext_resource path="res://assets/menu/main/bg_main_menu.png" type="Texture" id=1]
-[ext_resource path="res://assets/menu/main/button_main_menu_settings.png" type="Texture" id=2]
-[ext_resource path="res://assets/menu/main/button_main_menu_play.png" type="Texture" id=3]
-[ext_resource path="res://ui/main/MainMenu.gd" type="Script" id=4]
-[ext_resource path="res://assets/music/Menu Music.mp3" type="AudioStream" id=5]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_2.png" type="Texture" id=8]
-[ext_resource path="res://assets/menu/settings/menu_settings_volume_0.png" type="Texture" id=9]
-
-[sub_resource type="Animation" id=1]
-resource_name = "Fade"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
-}
+[ext_resource type="Texture2D" uid="uid://eg37ywtia038" path="res://assets/menu/main/bg_main_menu.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://btfh66fb6lsq2" path="res://assets/menu/main/button_main_menu_settings.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://4iumxb8bekrp" path="res://assets/menu/main/button_main_menu_play.png" id="3"]
+[ext_resource type="Script" path="res://ui/main/MainMenu.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://nm6baifltegl" path="res://assets/music/Menu Music.mp3" id="5"]
+[ext_resource type="Texture2D" uid="uid://bcuyca1662hf3" path="res://assets/menu/settings/menu_settings_volume_3.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dya0roe8cbnoi" path="res://assets/menu/settings/menu_settings_volume_1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dcr5ge7tcp0uy" path="res://assets/menu/settings/menu_settings_volume_2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://iug2j64of8nx" path="res://assets/menu/settings/menu_settings_volume_0.png" id="9"]
 
 [node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4")
 next_world = "res://scenes/levels/Level1.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Background" type="Sprite" parent="CenterContainer"]
-position = Vector2( 640, 352 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
+[node name="Background" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(639, 352)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1")
 
-[node name="PlaySelected" type="Sprite" parent="CenterContainer"]
-position = Vector2( 608, 640 )
-scale = Vector2( 0.138948, 0.138947 )
-texture = ExtResource( 3 )
+[node name="PlaySelected" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(608, 640)
+scale = Vector2(0.138948, 0.138947)
+texture = ExtResource("3")
 
-[node name="SettingsSelected" type="Sprite" parent="CenterContainer"]
-position = Vector2( 608, 640 )
-scale = Vector2( 0.138948, 0.138947 )
-texture = ExtResource( 2 )
+[node name="SettingsSelected" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(608, 640)
+scale = Vector2(0.138948, 0.138947)
+texture = ExtResource("2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource("5")
 autoplay = true
 
 [node name="SettingsMenu" type="Control" parent="."]
-pause_mode = 2
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1280.0
-margin_bottom = 704.0
-rect_pivot_offset = Vector2( -1824, 224 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="SettingsMenu"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.513726 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 0.513726)
 
-[node name="Volume0" type="Sprite" parent="SettingsMenu"]
+[node name="Volume0" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.108187, 0.108187 )
-texture = ExtResource( 9 )
+position = Vector2(640, 352)
+scale = Vector2(0.108187, 0.108187)
+texture = ExtResource("9")
 
-[node name="Volume1" type="Sprite" parent="SettingsMenu"]
+[node name="Volume1" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.243421, 0.243421 )
-texture = ExtResource( 7 )
+position = Vector2(640, 352)
+scale = Vector2(0.243421, 0.243421)
+texture = ExtResource("7")
 
-[node name="Volume2" type="Sprite" parent="SettingsMenu"]
+[node name="Volume2" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.243421, 0.243421 )
-texture = ExtResource( 8 )
+position = Vector2(640, 352)
+scale = Vector2(0.243421, 0.243421)
+texture = ExtResource("8")
 
-[node name="Volume3" type="Sprite" parent="SettingsMenu"]
+[node name="Volume3" type="Sprite2D" parent="SettingsMenu"]
 visible = false
-position = Vector2( 640, 352 )
-scale = Vector2( 0.107913, 0.107913 )
-texture = ExtResource( 6 )
-
-[node name="Fade" type="ColorRect" parent="."]
-margin_right = 1280.0
-margin_bottom = 704.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
-anims/Fade = SubResource( 1 )
+position = Vector2(640, 352)
+scale = Vector2(0.107913, 0.107913)
+texture = ExtResource("6")

@@ -1,4 +1,4 @@
-extends VideoPlayer
+extends VideoStreamPlayer
 
 
 # Declare member variables here. Examples:
@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_VideoPlayer_finished():
-	get_tree().change_scene("res://scenes/cutscenes/Credits.tscn")
+	StageManager.change_stage("res://scenes/cutscenes/Credits.tscn")

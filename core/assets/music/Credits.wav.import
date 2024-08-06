@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Credits.wav-d13977c6495c1c23d6047f9bf07c37f2.sample"
+type="AudioStreamWAV"
+uid="uid://dovaswvoqms2u"
+path="res://.godot/imported/Credits.wav-d13977c6495c1c23d6047f9bf07c37f2.sample"
 
 [deps]
 
 source_file="res://assets/music/Credits.wav"
-dest_files=[ "res://.import/Credits.wav-d13977c6495c1c23d6047f9bf07c37f2.sample" ]
+dest_files=["res://.godot/imported/Credits.wav-d13977c6495c1c23d6047f9bf07c37f2.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

@@ -1,6 +1,6 @@
 extends Control
 
-export(String, FILE, "*tscn") var next_world
+@export_file("*.tscn") var next_world
 
 enum {MAIN_MENU, SETTINGS_MENU} # Defines menus
 enum {VOLUME0 = -80, VOLUME1 = -40, VOLUME2 = -20, VOLUME3 = 0} # Defines settings menu buttons
@@ -21,6 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# HACK: genuinely the worst code ever
 	if current_menu == MAIN_MENU:
 		if Input.is_action_pressed("ui_right"):
 			play_selected = false
@@ -31,9 +32,7 @@ func _process(delta):
 			$CenterContainer/PlaySelected.show()
 			$CenterContainer/SettingsSelected.hide()
 		if Input.is_action_pressed("ui_accept") and play_selected:
-			$Fade/AnimationPlayer.play("Fade")
-			yield(get_tree().create_timer(0.5), "timeout")
-			get_tree().change_scene(next_world)
+			StageManager.change_stage(next_world)
 		if Input.is_action_pressed("ui_accept") and not play_selected:
 			$SettingsMenu.set_visible(true)
 			current_menu = SETTINGS_MENU
@@ -83,15 +82,13 @@ func _process(delta):
 			current_menu = MAIN_MENU
 		
 func save_settings():
-	var f = File.new()
-	f.open(settings_file, File.WRITE)
+	var f = FileAccess.open(settings_file, FileAccess.WRITE)
 	f.store_var(settings_selected)
 	f.close()
 
 func load_settings():
-	var f = File.new()
-	if f.file_exists(settings_file):
-		f.open(settings_file, File.READ)
+	if FileAccess.file_exists(settings_file):
+		var f = FileAccess.open(settings_file, FileAccess.READ)
 		settings_selected = f.get_var()
 		f.close()
 	else:

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const UP = Vector2(0, -1)
 const GRAVITY = 20
@@ -38,9 +38,10 @@ func _physics_process(delta):
 			else:
 				$Sprite.play("falling")
 			if friction == true:
-				motion.x = lerp(motion.x, 0, 0.05)
-			
-		motion = move_and_slide(motion, UP)
+				motion.x = lerp(motion.x, 0.0, 0.05)
+		
+		velocity = motion	
+		move_and_slide()
 	# Devtools allows you to fly through the level in order to test all
 	# levels in a single run without having to play through them all
 	else:
@@ -57,10 +58,13 @@ func _physics_process(delta):
 			motion.y = 500
 		else:
 			motion.y = 0
-		motion = move_and_slide(motion, UP)
+		velocity = motion	
+		move_and_slide()
 	
 func _input(event):
 	if event.is_action_pressed("devtools"): # F11
 		devtools_enabled = not devtools_enabled
 		if devtools_enabled:
-			get_node("../GUI/AcceptDialog").popup_centered()
+			var n = get_node("../GUI/AcceptDialog")
+			if n:
+				n.popup_centered()

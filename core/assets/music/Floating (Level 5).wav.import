@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Floating (Level 5).wav-86bab64ca5e76c9fdd4529d9aeaf4527.sample"
+type="AudioStreamWAV"
+uid="uid://d1ys117ydl2mm"
+path="res://.godot/imported/Floating (Level 5).wav-86bab64ca5e76c9fdd4529d9aeaf4527.sample"
 
 [deps]
 
 source_file="res://assets/music/Floating (Level 5).wav"
-dest_files=[ "res://.import/Floating (Level 5).wav-86bab64ca5e76c9fdd4529d9aeaf4527.sample" ]
+dest_files=["res://.godot/imported/Floating (Level 5).wav-86bab64ca5e76c9fdd4529d9aeaf4527.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

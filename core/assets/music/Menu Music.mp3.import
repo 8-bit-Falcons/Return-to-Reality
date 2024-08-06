@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Menu Music.mp3-47e54f9eccaaefd562a552dd8240a406.mp3str"
+uid="uid://nm6baifltegl"
+path="res://.godot/imported/Menu Music.mp3-47e54f9eccaaefd562a552dd8240a406.mp3str"
 
 [deps]
 
 source_file="res://assets/music/Menu Music.mp3"
-dest_files=[ "res://.import/Menu Music.mp3-47e54f9eccaaefd562a552dd8240a406.mp3str" ]
+dest_files=["res://.godot/imported/Menu Music.mp3-47e54f9eccaaefd562a552dd8240a406.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

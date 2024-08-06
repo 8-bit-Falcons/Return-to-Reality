@@ -8,8 +8,8 @@ static func replace_placeholders(placeholder_cells: Array, scene, tile_map_insta
 # tile_map_instance: probably `self`
 
 	for tile in placeholder_cells:
-		var new_tile = scene.instance()  # gets a new instance of the scene, including child nodes
-		new_tile.set_position(tile_map_instance.map_to_world(tile))  
+		var new_tile = scene.instantiate()  # gets a new instance of the scene, including child nodes
+		new_tile.set_position(tile_map_instance.map_to_local(tile))  
 		# Gets the position of the placeholder tile and sets the scene position to that
-		tile_map_instance.set_cell(tile.x, tile.y, -1)  # clears the tile
+		tile_map_instance.erase_cell(0, tile)  # clears the tile
 		tile_map_instance.add_child(new_tile)  # puts an instance of the scene at the same location

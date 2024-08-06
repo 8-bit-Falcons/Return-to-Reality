@@ -122,15 +122,13 @@ func _process(delta):
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), set_volume(VOLUME3))
 				
 func save_settings():
-	var f = File.new()
-	f.open(settings_file, File.WRITE)
+	var f = FileAccess.open(settings_file, FileAccess.WRITE)
 	f.store_var(settings_selected)
 	f.close()
 
 func load_settings():
-	var f = File.new()
-	if f.file_exists(settings_file):
-		f.open(settings_file, File.READ)
+	if FileAccess.file_exists(settings_file):
+		var f = FileAccess.open(settings_file, FileAccess.READ)
 		settings_selected = f.get_var()
 		f.close()
 	else:

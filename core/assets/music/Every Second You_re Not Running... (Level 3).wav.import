@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Every Second You_re Not Running... (Level 3).wav-ec2c0229c63b4da4015120296031922b.sample"
+type="AudioStreamWAV"
+uid="uid://blr5hwgbsrmo8"
+path="res://.godot/imported/Every Second You_re Not Running... (Level 3).wav-ec2c0229c63b4da4015120296031922b.sample"
 
 [deps]
 
 source_file="res://assets/music/Every Second You_re Not Running... (Level 3).wav"
-dest_files=[ "res://.import/Every Second You_re Not Running... (Level 3).wav-ec2c0229c63b4da4015120296031922b.sample" ]
+dest_files=["res://.godot/imported/Every Second You_re Not Running... (Level 3).wav-ec2c0229c63b4da4015120296031922b.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0
