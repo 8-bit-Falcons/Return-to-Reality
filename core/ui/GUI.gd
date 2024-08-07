@@ -12,6 +12,9 @@ var settings_selected = load_settings() # The button selected on the settings me
 func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), set_volume(settings_selected))
 	
+	if StageManager.changing_scene:
+		await StageManager.finished
+		
 	if get_tree().paused:
 		$PauseMenu.set_visible(true)
 		$SettingsMenu.set_visible(false)
