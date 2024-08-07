@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0vqpsllx2vj0"]
+[gd_scene load_steps=12 format=3 uid="uid://b0vqpsllx2vj0"]
 
 [ext_resource type="Texture2D" uid="uid://ckg4lbwdc8ek8" path="res://assets/sprites/player/walking/player_walking_2.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bv8nonfbde7av" path="res://assets/sprites/player/player_idle.png" id="2"]
@@ -61,9 +61,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6o0c"]
-size = Vector2(25, 53)
-
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 9
@@ -73,9 +70,8 @@ script = ExtResource("12")
 sprite_frames = SubResource("1")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 5.5)
-shape = SubResource("RectangleShape2D_w6o0c")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(12, 29, 9, 29, 8, 32, -8, 32, -9, 29, -12, 28, -13, 18, -13, -21, 12, -21, 12, 29)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

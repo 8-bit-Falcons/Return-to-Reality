@@ -1,66 +1,63 @@
 extends CharacterBody2D
 
-const UP = Vector2(0, -1)
-const GRAVITY = 20
-const ACCELERATION = 50
-const MAX_SPEED = 200
-const JUMP_HEIGHT = -500
 
-var motion = Vector2()
+const ACCELERATION = 50
+const SPEED = 200.0
+const JUMP_VELOCITY = -500.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var devtools_enabled = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta):
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
 	if not devtools_enabled:
-		motion.y += GRAVITY
-		var friction = false
-		
 		if Input.is_action_pressed("move_right"):
-			motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
+			velocity.x = min(velocity.x + ACCELERATION, SPEED)
 			$Sprite.flip_h = false
 			$Sprite.play("walking")
 		elif Input.is_action_pressed("move_left"):
-			motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
+			velocity.x = max(velocity.x - ACCELERATION, -SPEED)
 			$Sprite.flip_h = true
 			$Sprite.play("walking")
 		else:
+			velocity.x = move_toward(velocity.x, 0, ACCELERATION)
 			$Sprite.play("idle")
-			friction = true
 			
-		if is_on_floor():
-			if Input.is_action_just_pressed("jump"):
-				motion.y = JUMP_HEIGHT
-			if friction == true:
-				motion.x = lerp(motion.x, 0, 0.2)
-		else:
-			if motion.y < 0:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			
+			if velocity.y < 0:
 				$Sprite.play("jumping")
 			else:
 				$Sprite.play("falling")
-			if friction == true:
-				motion.x = lerp(motion.x, 0.0, 0.05)
-		
-		velocity = motion	
+	
 		move_and_slide()
-	# Devtools allows you to fly through the level in order to test all
-	# levels in a single run without having to play through them all
+	## Devtools allows you to fly through the level in order to test all
+	## levels in a single run without having to play through them all
 	else:
 		if Input.is_action_pressed("ui_right"):
-			motion.x = 500
+			velocity.x = 500
 		elif Input.is_action_pressed("ui_left"):
-			motion.x = -500
+			velocity.x = -500
 		else:
-			motion.x = 0
+			velocity.x = 0
 		
 		if Input.is_action_pressed("ui_up"):
-			motion.y = -500
+			velocity.y = -500
 		elif Input.is_action_pressed("ui_down"):
-			motion.y = 500
+			velocity.y = 500
 		else:
-			motion.y = 0
-		velocity = motion	
+			velocity.y = 0
+		
 		move_and_slide()
-	
+
+
 func _input(event):
 	if event.is_action_pressed("devtools"): # F11
 		devtools_enabled = not devtools_enabled

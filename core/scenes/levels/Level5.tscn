@@ -111,13 +111,13 @@ shape = SubResource("1")
 position = Vector2(2224, 472)
 shape = SubResource("4")
 
-[node name="Player" parent="." instance=ExtResource("8_u4dy0")]
-position = Vector2(30, 761)
-
 [node name="SpriteTvWorking1" type="Sprite2D" parent="."]
 position = Vector2(2480, 1317)
 scale = Vector2(0.049, 0.049)
 texture = ExtResource("9_bnpqf")
+
+[node name="Player" parent="." instance=ExtResource("8_u4dy0")]
+position = Vector2(30, 761)
 
 [node name="Fade" type="ColorRect" parent="."]
 color = Color(0, 0, 0, 0)
