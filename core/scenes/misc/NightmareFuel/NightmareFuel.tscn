@@ -1,46 +1,67 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://4h2epowusjxo"]
 
-[ext_resource path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_1.png" type="Texture" id=1]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_3.png" type="Texture" id=2]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_4.png" type="Texture" id=3]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_4.png" type="Texture" id=6]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_2.png" type="Texture" id=8]
-[ext_resource path="res://scenes/misc/NightmareFuel/NightmareFuel.gd" type="Script" id=9]
+[ext_resource type="Texture2D" uid="uid://cge41r8c84hhu" path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dvyp8hrndnpbp" path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bdvv68ydqi7kg" path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_4.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bhearxaqfp7vm" path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://rtr12o625ie" path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dto2rbxwlv08o" path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_4.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dmo1dvsissnxc" path="res://assets/tilesets/nightmare-fuel/base/tile_nightmare_fuel_base_1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bfirdvpcuv1hb" path="res://assets/tilesets/nightmare-fuel/top/tile_nightmare_fuel_top_2.png" id="8"]
+[ext_resource type="Script" path="res://scenes/misc/NightmareFuel/NightmareFuel.gd" id="9"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "Base",
+"name": &"Base",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
 "loop": true,
-"name": "Top",
+"name": &"Top",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 8 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32, 16)
 
 [node name="Nightmare_Fuel" type="Area2D"]
 collision_layer = 4
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
+collision_mask = 8
+script = ExtResource("9")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 1 )
-animation = "Top"
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("1")
+animation = &"Top"
 frame = 2
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource("2")
 
 [connection signal="body_entered" from="." to="." method="_on_Nightmare_Fuel_body_entered"]

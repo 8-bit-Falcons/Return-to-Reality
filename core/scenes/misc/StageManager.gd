@@ -3,9 +3,22 @@ extends CanvasLayer
 @onready var animations = $AnimationPlayer
 @onready var black = $ColorRect
 
+## Emitted when the stage manager has begun changing the scene
+signal started
+## Emitted when the stage manager has finished changing the scene
+signal finished
+
 const MAIN_MENU = "res://ui/main/MainMenu.tscn"
 const WAKE_UP_CUTSCENE = "res://scenes/cutscenes/WakingUpCutscene.tscn"
 const CREDITS = "res://scenes/cutscenes/Credits.tscn"
+
+var changing_scene = false:
+	set(val):
+		changing_scene = val
+		if changing_scene:
+			started.emit()
+		else:
+			finished.emit()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +27,8 @@ func _ready():
 
 # Changes the scene
 func change_stage(stage_path):
+	changing_scene = true
+	
 	# Fade in to black
 	get_tree().paused = true
 	black.show()
@@ -29,3 +44,4 @@ func change_stage(stage_path):
 	await animations.animation_finished
 	black.hide()
 	get_tree().paused = false
+	changing_scene = false
