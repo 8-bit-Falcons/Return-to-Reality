@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://qfucd8dfntj6"]
 
-[ext_resource type="PackedScene" path="res://entities/boss/boss.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dig2fns35bg8" path="res://entities/boss/boss.tscn" id="1"]
 [ext_resource type="Script" path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b0vqpsllx2vj0" path="res://entities/player/Player.tscn" id="3"]
 [ext_resource type="TileSet" uid="uid://dn5vb7x8wtqcw" path="res://tilesets/4-5/BouncyClouds/BouncyClouds.tres" id="4"]
@@ -36,6 +36,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+texture_filter = 1
 script = ExtResource("9")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -47,12 +48,14 @@ metadata/_edit_lock_ = true
 position = Vector2(1056, 160)
 
 [node name="Clouds" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = ExtResource("4")
 format = 2
 layer_0/tile_data = PackedInt32Array(2228238, 0, 0, 1835019, 0, 0, 1835020, 0, 0, 1835021, 0, 0, 1835028, 0, 0, 1835029, 0, 0, 1835030, 0, 0, 1835034, 0, 0, 1835035, 0, 0, 1835036, 0, 0, 1835040, 0, 0, 1835041, 0, 0, 1835042, 0, 0, 1835010, 0, 0, 1835011, 0, 0, 1835012, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1048584, 0, 0, 1048589, 0, 0, 1048600, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 917507, 0, 0, 917508, 0, 0, 917523, 0, 0, 917532, 0, 0, 917533, 0, 0, 917537, 0, 0, 655371, 0, 0, 655381, 0, 0, 524293, 0, 0, 524294, 0, 0, 655376, 0, 0, 524314, 0, 0, 524315, 0, 0, 524319, 0, 0, 393252, 0, 0)
 script = ExtResource("2")
 
 [node name="Ground" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = ExtResource("6")
 format = 2
 layer_0/tile_data = PackedInt32Array(2359331, 131072, 2, 2293795, 131072, 1, 2228259, 131072, 0, 2359330, 65536, 2, 2293794, 65536, 1, 2228258, 65536, 0, 2359329, 65536, 2, 2293793, 65536, 1, 2228257, 65536, 0, 2359328, 65536, 2, 2293792, 65536, 1, 2228256, 65536, 0, 2359327, 65536, 2, 2293791, 65536, 1, 2228255, 65536, 0, 2359326, 0, 2, 2293790, 0, 1, 2228254, 0, 0)
@@ -61,6 +64,7 @@ layer_0/tile_data = PackedInt32Array(2359331, 131072, 2, 2293795, 131072, 1, 222
 position = Vector2(1056, 1056)
 
 [node name="NIGHTMARENIGHTMARENIGHTMARE" type="TileMap" parent="."]
+texture_filter = 1
 scale = Vector2(0.1, 0.1)
 tile_set = ExtResource("7")
 format = 2

@@ -120,12 +120,14 @@ collision_mask = 8
 script = ExtResource("21")
 
 [node name="LeftCloud" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
 position = Vector2(-32, -19)
 sprite_frames = SubResource("1")
 animation = &"Idle"
 centered = false
 
 [node name="RightCloud" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
 position = Vector2(-32, -19)
 sprite_frames = SubResource("2")
 animation = &"Idle"

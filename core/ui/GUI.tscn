@@ -15,6 +15,7 @@ script = ExtResource("8")
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,6 +50,8 @@ texture = ExtResource("1")
 offset = Vector2(2826.38, -1446.05)
 
 [node name="SettingsMenu" type="Control" parent="."]
+visible = false
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

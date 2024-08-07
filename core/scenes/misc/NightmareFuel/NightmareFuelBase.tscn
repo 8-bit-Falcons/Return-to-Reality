@@ -47,6 +47,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite" type="AnimatedSprite2D"]
+texture_filter = 1
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("1")
 animation = &"Base"

@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://d27e3bt6iumvv" path="res://tilesets/4-5/TilesetLevels4-5.tres" id="2"]
 [ext_resource type="Script" path="res://scenes/levels/Level4.gd" id="3"]
 [ext_resource type="PackedScene" uid="uid://b0vqpsllx2vj0" path="res://entities/player/Player.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/misc/WorldComplete/World_Complete.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://8gy1cosbchw4" path="res://scenes/misc/WorldComplete/World_Complete.tscn" id="5"]
 [ext_resource type="TileSet" path="res://tilesets/4-5/DisappearingPlatform/DisappearingPlatform.tres" id="6"]
 [ext_resource type="Script" path="res://tilesets/4-5/DisappearingPlatform/DisappearingPlatformTiles.gd" id="7"]
 [ext_resource type="Script" path="res://tilesets/NightmareFuel/NightmareFuelTiles.gd" id="8"]
@@ -39,6 +39,7 @@ _data = {
 }
 
 [node name="Level4" type="Node2D"]
+texture_filter = 1
 script = ExtResource("3")
 
 [node name="bg_level4" type="Sprite2D" parent="."]
@@ -52,6 +53,7 @@ rotation = 6.28319
 next_world = "res://scenes/levels/Level5.tscn"
 
 [node name="Platforms" type="TileMap" parent="."]
+texture_filter = 1
 position = Vector2(1, 0)
 tile_set = ExtResource("2")
 format = 2
@@ -61,6 +63,7 @@ layer_0/tile_data = PackedInt32Array(2097156, 131072, 1, 2031620, 131072, 1, 196
 position = Vector2(32, 640)
 
 [node name="Bubbles" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = ExtResource("6")
 format = 2
 layer_0/tile_data = PackedInt32Array(917560, 0, 0, 917561, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1114151, 0, 0, 1179677, 0, 0, 1179683, 0, 0, 1179684, 0, 0, 1179719, 0, 0, 1179720, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1441836, 0, 0, 1441837, 0, 0, 1638435, 0, 0, 1638436, 0, 0, 1638442, 0, 0, 1638443, 0, 0, 2228291, 0, 0)
@@ -75,6 +78,7 @@ position = Vector2(1280, 1440)
 shape = SubResource("1")
 
 [node name="NightmareFuel" type="TileMap" parent="."]
+texture_filter = 1
 scale = Vector2(0.1, 0.1)
 tile_set = ExtResource("9")
 format = 2

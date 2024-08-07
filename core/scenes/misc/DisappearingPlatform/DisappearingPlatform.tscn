@@ -91,6 +91,7 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("2")
 animation = &"Idle"
 
