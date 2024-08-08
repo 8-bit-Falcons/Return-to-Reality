@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
+@onready var camera_2d = $Camera2D
 
 const ACCELERATION = 50
 const SPEED = 200.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -480.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var devtools_enabled = false
 
+
+func _ready():
+	camera_2d.reset_smoothing()
 
 func _physics_process(delta):
 	# Handle jump.
