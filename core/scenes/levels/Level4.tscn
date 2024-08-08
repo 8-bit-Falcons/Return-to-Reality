@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7or6kmgwsu2v"]
+[gd_scene load_steps=13 format=3 uid="uid://7or6kmgwsu2v"]
 
 [ext_resource type="Texture2D" uid="uid://d12im4qnmdreq" path="res://assets/backgrounds/bg_level4.PNG" id="1"]
 [ext_resource type="TileSet" uid="uid://d27e3bt6iumvv" path="res://tilesets/4-5/TilesetLevels4-5.tres" id="2"]
@@ -16,27 +16,6 @@ size = Vector2(2624, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp4qm"]
 size = Vector2(25600, 320)
-
-[sub_resource type="Animation" id="Animation_l1ror"]
-resource_name = "Fade"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aiqv6"]
-_data = {
-"Fade": SubResource("Animation_l1ror")
-}
 
 [node name="Level4" type="Node2D"]
 texture_filter = 1
@@ -94,14 +73,6 @@ position = Vector2(12800, 240)
 shape = SubResource("RectangleShape2D_kp4qm")
 
 [node name="GUI" parent="." instance=ExtResource("10")]
-
-[node name="Fade" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
-libraries = {
-"": SubResource("AnimationLibrary_aiqv6")
-}
 
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]
 [connection signal="body_entered" from="NightmareFuel/Area2D" to="NightmareFuel" method="_on_area_2d_body_entered"]

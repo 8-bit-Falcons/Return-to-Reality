@@ -8,6 +8,4 @@ func _ready():
 
 
 func _on_Fallzone_body_entered(body):
-	$Fade/AnimationPlayer.play("Fade")
-	await get_tree().create_timer(0.5).timeout
-	get_tree().reload_current_scene()
+	StageManager.reset_scene()

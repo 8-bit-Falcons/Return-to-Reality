@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qfucd8dfntj6"]
+[gd_scene load_steps=12 format=3 uid="uid://qfucd8dfntj6"]
 
 [ext_resource type="PackedScene" uid="uid://dig2fns35bg8" path="res://entities/boss/boss.tscn" id="1"]
 [ext_resource type="Script" path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" id="2"]
@@ -13,27 +13,6 @@
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16160, 320)
-
-[sub_resource type="Animation" id="2"]
-resource_name = "Fade"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_08avy"]
-_data = {
-"Fade": SubResource("2")
-}
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
@@ -83,14 +62,6 @@ position = Vector2(17680, 11440)
 shape = SubResource("1")
 
 [node name="GUI" parent="." instance=ExtResource("10")]
-
-[node name="Fade" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
-libraries = {
-"": SubResource("AnimationLibrary_08avy")
-}
 
 [connection signal="dying" from="Bossman" to="." method="_on_Bossman_dying"]
 [connection signal="body_entered" from="NIGHTMARENIGHTMARENIGHTMARE/Area2D" to="NIGHTMARENIGHTMARENIGHTMARE/Area2D" method="_on_Nightmare_Fuel_body_entered"]

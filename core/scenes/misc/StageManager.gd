@@ -30,7 +30,7 @@ func change_stage(stage_path):
 	changing_scene = true
 	
 	# Fade in to black
-	get_tree().paused = true
+	#get_tree().paused = true
 	black.show()
 	animations.play("fade_in")
 	await animations.animation_finished
@@ -43,5 +43,18 @@ func change_stage(stage_path):
 	animations.play("fade_out")
 	await animations.animation_finished
 	black.hide()
-	get_tree().paused = false
+	#get_tree().paused = false
 	changing_scene = false
+
+
+# Reset the current scene
+func reset_scene():
+	black.show()
+	animations.play("fade_in")
+	await animations.animation_finished
+	
+	get_tree().reload_current_scene()
+	
+	animations.play("fade_out")
+	await animations.animation_finished
+	black.hide()
