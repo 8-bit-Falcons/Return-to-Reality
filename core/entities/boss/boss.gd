@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+@onready var ray_cast = $"../RayCast2D"
+@onready var timer = $"../Timer"
+@export var ammo : PackedScene
+
 signal dying
 
 const TIME_BETWEEN_HITS = 2  # seconds
@@ -18,12 +22,12 @@ var dead = false  # this isn't really needed but I added it for simplicity's sak
 var time_since_hit = 0.0
 var time_since_flash = 0.0
 var damagecolor_active: bool = false
-
+var player
 
 func _ready():
-	pass
+	player = get_parent().find_child("Player")
 	#$AnimatedSprite.play("summoned")
-	
+
 func _physics_process(delta):
 	if dead:
 		$AnimatedSprite.modulate.a -= FADE_RATE
@@ -34,6 +38,17 @@ func _physics_process(delta):
 		# TODO potentially scuffed?  idk how else to do
 		var motion = heading * SPEED * delta
 		position.x += motion.x
+		_shoot()
+		#_aim()
+
+#func _aim():
+	#ray_cast.target_position = to_local(player.position)
+
+func _shoot():
+	var pellet = ammo.instantiate()
+	pellet.position = $".".position
+	pellet.direction = (ray_cast.target_position).normalized()
+	get_tree().current_scene.add_child(pellet)
 
 func _process(delta):
 	if time_since_hit > 0.0:
@@ -45,6 +60,7 @@ func _process(delta):
 
 		if time_since_flash > FLASH_FREQ:
 			change_color(not damagecolor_active)
+			
 
 func change_color(active: bool):
 	time_since_flash = 0.0
@@ -65,3 +81,6 @@ func _on_Area2D_body_entered(body):
 			time_since_hit = 0.001
 		else:
 			die()
+			
+
+

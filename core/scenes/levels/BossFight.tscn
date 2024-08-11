@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://qfucd8dfntj6"]
+[gd_scene load_steps=15 format=3 uid="uid://qfucd8dfntj6"]
 
 [ext_resource type="PackedScene" path="res://entities/boss/boss.tscn" id="1"]
 [ext_resource type="Script" path="res://tilesets/4-5/BouncyClouds/BouncyCloudsTiles.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b0vqpsllx2vj0" path="res://entities/player/Player.tscn" id="3"]
 [ext_resource type="TileSet" uid="uid://dn5vb7x8wtqcw" path="res://tilesets/4-5/BouncyClouds/BouncyClouds.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://cy74cfupveywl" path="res://scenes/misc/shooter.tscn" id="4_e6f3r"]
 [ext_resource type="Script" path="res://scenes/misc/NightmareFuel/NightmareFuel.gd" id="5"]
 [ext_resource type="TileSet" uid="uid://d27e3bt6iumvv" path="res://tilesets/4-5/TilesetLevels4-5.tres" id="6"]
 [ext_resource type="TileSet" uid="uid://c0ucoj6pkscwl" path="res://tilesets/NightmareFuel/NightmareFuel.tres" id="7"]
@@ -45,6 +46,7 @@ metadata/_edit_lock_ = true
 
 [node name="Bossman" parent="." instance=ExtResource("1")]
 position = Vector2(1056, 160)
+ammo = ExtResource("4_e6f3r")
 
 [node name="Clouds" type="TileMap" parent="."]
 tile_set = ExtResource("4")
@@ -87,6 +89,9 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_08avy")
 }
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 3
 
 [connection signal="dying" from="Bossman" to="." method="_on_Bossman_dying"]
 [connection signal="body_entered" from="NIGHTMARENIGHTMARENIGHTMARE/Area2D" to="NIGHTMARENIGHTMARENIGHTMARE/Area2D" method="_on_Nightmare_Fuel_body_entered"]

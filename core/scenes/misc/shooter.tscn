@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy74cfupveywl"]
+
+[ext_resource type="Script" path="res://scenes/misc/pellets.gd" id="1_inte4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sfsr4"]
+
+[node name="pellets" type="Area2D"]
+script = ExtResource("1_inte4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.646955, 1, 0.558769, 1)
+scale = Vector2(3, 5)
+texture = SubResource("CanvasTexture_sfsr4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
