@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var ray_cast = $"../RayCast2D"
-@onready var timer = $"../Timer"
 @export var ammo : PackedScene
 
 signal dying
@@ -38,7 +37,9 @@ func _physics_process(delta):
 		# TODO potentially scuffed?  idk how else to do
 		var motion = heading * SPEED * delta
 		position.x += motion.x
-		_shoot()
+		if $Timer.timeout:
+			await _shoot()
+			print("timer done")
 		#_aim()
 
 #func _aim():

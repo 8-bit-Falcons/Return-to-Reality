@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy74cfupveywl"]
+[gd_scene load_steps=4 format=3 uid="uid://cy74cfupveywl"]
 
 [ext_resource type="Script" path="res://scenes/misc/pellets.gd" id="1_inte4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sfsr4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flh1k"]
+size = Vector2(3, 5)
+
 [node name="pellets" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_inte4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,4 +19,8 @@ texture = SubResource("CanvasTexture_sfsr4")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_flh1k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
