@@ -37,9 +37,7 @@ func _physics_process(delta):
 		# TODO potentially scuffed?  idk how else to do
 		var motion = heading * SPEED * delta
 		position.x += motion.x
-		if $Timer.timeout:
-			await _shoot()
-			print("timer done")
+			
 		#_aim()
 
 #func _aim():
@@ -62,6 +60,7 @@ func _process(delta):
 		if time_since_flash > FLASH_FREQ:
 			change_color(not damagecolor_active)
 			
+			
 
 func change_color(active: bool):
 	time_since_flash = 0.0
@@ -82,6 +81,6 @@ func _on_Area2D_body_entered(body):
 			time_since_hit = 0.001
 		else:
 			die()
-			
 
-
+func _on_timer_timeout():
+	_shoot()

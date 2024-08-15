@@ -49,6 +49,9 @@ position = Vector2(1056, 160)
 ammo = ExtResource("4_e6f3r")
 
 [node name="Timer" type="Timer" parent="Bossman"]
+process_callback = 0
+wait_time = 0.409
+autostart = true
 
 [node name="Clouds" type="TileMap" parent="."]
 tile_set = ExtResource("4")
@@ -97,4 +100,5 @@ libraries = {
 collision_mask = 3
 
 [connection signal="dying" from="Bossman" to="." method="_on_Bossman_dying"]
+[connection signal="timeout" from="Bossman/Timer" to="Bossman" method="_on_timer_timeout"]
 [connection signal="body_entered" from="NIGHTMARENIGHTMARENIGHTMARE/Area2D" to="NIGHTMARENIGHTMARENIGHTMARE/Area2D" method="_on_Nightmare_Fuel_body_entered"]
